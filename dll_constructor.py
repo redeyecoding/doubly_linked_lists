@@ -116,6 +116,7 @@ class Doubley_Linked_lists():
         self.length -= 1
         return temp
     
+    # @TODO - Finish get_node method
     def get_node(self, index):
         if self.length == 0: return None
         temp = self.head
