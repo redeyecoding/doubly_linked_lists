@@ -117,27 +117,30 @@ class Doubley_Linked_lists():
         return temp
     
     def get_node(self, index):
-        if self.length == 0: return None
+        if index < 0 or index >= self.length:
+            return None
         temp = self.head
-        counter = 1
-        node_index = counter - 1
-
-        while temp.next:
-            if node_index == index:
+        if index < self.length/2:
+            for _ in range(index):
                 temp = temp.next
-                temp.next.prev
-
-        return
-
-
-dll_1 = Doubley_Linked_lists(133)
-dll_1.append_node(399)
-dll_1.append_node(800)
-dll_1.append_node(84400)
+        else:
+            temp = self.tail
+            for _ in range(self.length - 1, index, -1):
+                temp = temp.prev  
+        return temp.next
 
 
+dll_1 = Doubley_Linked_lists("A")
+dll_1.append_node("B")
+dll_1.append_node("C")
+dll_1.append_node("D")
+dll_1.append_node("E")
+dll_1.append_node("F")
+dll_1.append_node("G")
+dll_1.append_node("H")
+dll_1.append_node("I")
 
-
+print(f"GET {dll_1.get_node(4).value}")
 
 dll_1.print_list()
 
