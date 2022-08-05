@@ -133,11 +133,12 @@ class Doubley_Linked_lists():
     def get_node_v2(self, index):
         '''Version 2 for GET method has only one Looper'''
         # User must enter a valid index
-        if index < 0 or index > self.length - 1:
+        if ( index < 0 ) or ( index > self.length - 1 ):
             return None
         counter = 1
         node_index = None
         temp = self.head
+
 
         while temp.next:
             if node_index == index:
