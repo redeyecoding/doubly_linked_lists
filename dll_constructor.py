@@ -117,18 +117,37 @@ class Doubley_Linked_lists():
         return temp
     
     # 
-    def get_node_v1(self, index):
-        if index < 0 or index >= self.length:
+    # def get_node_v1(self, index):
+    #     if index < 0 or index >= self.length:
+    #         return None
+    #     temp = self.head
+    #     if index < self.length/2:
+    #         for _ in range(index):
+    #             temp = temp.next
+    #     else:
+    #         temp = self.tail
+    #         for _ in range(self.length - 1, index, -1):
+    #             temp = temp.prev  
+    #     return temp.next
+    
+    def get_node_v2(self, index):
+        '''Version 2 for GET method has only one Looper'''
+        # User must enter a valid index
+        if index < 0 or index > self.length - 1:
             return None
+        counter = 1
+        node_index = None
         temp = self.head
-        if index < self.length/2:
-            for _ in range(index):
+
+        while temp.next:
+            if node_index == index:
+                return temp
+            else:
                 temp = temp.next
-        else:
-            temp = self.tail
-            for _ in range(self.length - 1, index, -1):
-                temp = temp.prev  
-        return temp.next
+                counter += 1
+                node_index = counter - 1              
+        return temp
+
 
 
 
@@ -142,7 +161,7 @@ dll_1.append_node("G")
 dll_1.append_node("H")
 dll_1.append_node("I")
 
-print(f"GET {dll_1.get_node(4).value}")
+print(f"GET {dll_1.get_node_v2(-1)}")
 
 dll_1.print_list()
 
