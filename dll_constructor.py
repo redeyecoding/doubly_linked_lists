@@ -139,10 +139,10 @@ class Doubley_Linked_lists():
         node_index = None
         temp = self.head
 
-
+        #If 
         while temp.next:
             if node_index == index:
-                return temp
+                break
             else:
                 temp = temp.next
                 counter += 1
@@ -162,7 +162,7 @@ dll_1.append_node("G")
 dll_1.append_node("H")
 dll_1.append_node("I")
 
-print(f"GET {dll_1.get_node_v2(-1)}")
+print(f"GET {dll_1.get_node_v2(5).value}")
 
 dll_1.print_list()
 
