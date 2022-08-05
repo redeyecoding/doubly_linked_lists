@@ -117,7 +117,7 @@ class Doubley_Linked_lists():
         return temp
     
     # 
-    def get_node(self, index):
+    def get_node_v1(self, index):
         if index < 0 or index >= self.length:
             return None
         temp = self.head
@@ -129,6 +129,7 @@ class Doubley_Linked_lists():
             for _ in range(self.length - 1, index, -1):
                 temp = temp.prev  
         return temp.next
+
 
 
 dll_1 = Doubley_Linked_lists("A")
