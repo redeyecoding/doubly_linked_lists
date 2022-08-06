@@ -148,8 +148,9 @@ class Doubley_Linked_lists():
                 counter += 1
                 node_index = counter - 1              
         return temp
-
-
+    # @TODO  Complete Set Method
+    def set_node(self, index):
+        return
 
 
 dll_1 = Doubley_Linked_lists("A")
